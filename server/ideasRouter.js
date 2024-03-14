@@ -12,11 +12,11 @@ const {
   } = require('./db');
 
 
-  ideasRouter.get('/api/ideas', (req, res, next) => {
+  ideasRouter.get('/', (req, res, next) => {
     
   });
   
-  ideasRouter.post('/api/ideas', (req, res, next) => {
+  ideasRouter.post('/', (req, res, next) => {
       const newIdea = req.body;
   
       if(typeof newMinion === 'object' && newMinion !== null) {
@@ -28,14 +28,14 @@ const {
       };
   });
   
-  ideasRouter.get('/api/ideas/:ideaId', (req, res, next) => {
+  ideasRouter.get('/:ideaId', (req, res, next) => {
   
   });
   
-  ideasRouter.put('/api/ideas/:ideaId', (req, res, next) => {
+  ideasRouter.put('/:ideaId', (req, res, next) => {
   
   });
   
-  ideasRouter.delete('/api/ideas/:ideaId', (req, res, next) => {
+  ideasRouter.delete('/:ideaId', (req, res, next) => {
   
   });

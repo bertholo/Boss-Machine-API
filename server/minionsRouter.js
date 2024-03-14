@@ -14,7 +14,7 @@ const {
   } = require('./db');
 
 
-  minionsRouter.get('/api/minions', (req, res, next) => {
+  minionsRouter.get('/', (req, res, next) => {
     const minions = req.body;
     const minionsData = getAllFromDatabase(minions);
     if(minionsData) {
@@ -27,7 +27,7 @@ const {
 
 });
 
-minionsRouter.post('/api/minions', (req, res, next) => {
+minionsRouter.post('/', (req, res, next) => {
     const newMinion = req.body;
 
     if(typeof newMinion === 'object' && newMinion !== null) {
@@ -39,14 +39,14 @@ minionsRouter.post('/api/minions', (req, res, next) => {
     };
 });
 
-minionsRouter.get('/api/minions/:minionId', (req, res, next) => {
+minionsRouter.get('/:minionId', (req, res, next) => {
 
 });
 
-minionsRouter.put('/api/minions/:minionId', (req, res, next) => {
+minionsRouter.put('/:minionId', (req, res, next) => {
 
 });
 
-minionsRouter.delete('/api/minions/:minionId', (req, res, next) => {
+minionsRouter.delete('/:minionId', (req, res, next) => {
 
 });

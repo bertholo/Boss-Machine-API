@@ -11,11 +11,11 @@ const {
     deleteFromDatabasebyId,
   } = require('./db');
 
-  meetingsRouter.get('/api/meetings', (req, res, next) => {
+  meetingsRouter.get('/', (req, res, next) => {
     
   });
   
-  meetingsRouter.post('/api/meetings', (req, res, next) => {
+  meetingsRouter.post('/', (req, res, next) => {
       const newMeeting = req.body;
   
       if(typeof newMeeting === 'object' && newMeeting !== null) {
@@ -27,6 +27,6 @@ const {
       };
   });
   
-  meetingsRouter.post('/api/meetings', (req, res, next) => {
+  meetingsRouter.delete('/', (req, res, next) => {
   
   });
