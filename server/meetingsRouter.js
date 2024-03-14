@@ -11,20 +11,15 @@ const {
     deleteFromDatabasebyId,
   } = require('./db');
 
+  const createMeeting = require('./db');
+
   meetingsRouter.get('/', (req, res, next) => {
-    
+    res.send(getAllFromDatabase('meetings'));
   });
   
   meetingsRouter.post('/', (req, res, next) => {
-      const newMeeting = req.body;
-  
-      if(typeof newMeeting === 'object' && newMeeting !== null) {
-          addToDatabase(meetings, newMeeting);
-          console.log(`New minion added: ${newMeeting}`);
-          res.status(201).send(newMeeting);
-      } else{
-          console.log('Invalid characters');
-      };
+     let newMeeting = addToDatabase('meetings', createMeeting());
+     res.status(201).send(newMeeting);
   });
   
   meetingsRouter.delete('/', (req, res, next) => {
