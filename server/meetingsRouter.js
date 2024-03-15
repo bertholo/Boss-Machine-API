@@ -6,12 +6,9 @@ module.exports = meetingsRouter;
 const { 
     addToDatabase,
     getAllFromDatabase,
-    getFromDatabaseById,
-    updateInstanceInDatabase,
-    deleteFromDatabasebyId,
+    deleteAllFromDatabase,
+    createMeeting
   } = require('./db');
-
-  const createMeeting = require('./db');
 
   meetingsRouter.get('/', (req, res, next) => {
     res.send(getAllFromDatabase('meetings'));
@@ -23,5 +20,6 @@ const {
   });
   
   meetingsRouter.delete('/', (req, res, next) => {
-  
+    deleteAllFromDatabase('meetings');
+    res.status(204).send();
   });
